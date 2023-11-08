@@ -1,0 +1,55 @@
+{%extends 'home.html'%}
+
+{%block title%} 
+
+  Signup page
+
+{%endblock%}
+{%block content%}
+<div class="container ">
+    <div class="row  d-flex justify-content-center align-items-center  " style="height: 100vh; ">
+        <div class="col-md-5 shadow p-5 bg-warning text-center" style="border-radius: 15px;">
+
+
+    <form method="POST" action="">
+      {%csrf_token%}
+        <div class="mb-3  ">
+            <div class="text-center" ><h1>Login Page</h1></div>
+            
+          <label for="exampleInputEmail1" class="form-label"></label>
+          <input type="username" class="form-control rounded-pill" name="username" placeholder="Username" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <p class="mt-2" style="color: red;">{{error_user}}</p>
+
+        </div>
+        <div class="mb-3 ">
+          <label  for="exampleInputPassword1" class="form-label" ></label>
+          <input type="Email" placeholder="Email" name="email" class="form-control rounded-pill" id="exampleInputPassword1">
+          <p class="mt-3" style="color: red;">{{error_email}}</p>
+
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"></label>
+          <input type="password" class="form-control rounded-pill"  name="password" placeholder="Password" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3 text-center">
+          <label  for="exampleInputPassword1" class="form-label" ></label>
+          <input type="password" placeholder="Confirm Password" name="con_password" class="form-control rounded-pill" id="exampleInputPassword1">
+          <p class="mt-3" style="color: red;">{{error_message}}</p>          <p class="mt-3" style="color: red;">{{error_pass}}</p>
+
+
+        </div>
+        <div class="mt-3 form-check d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary w-50 rounded-pill">Signup</button>
+        
+        </div>
+        <div class="mt-3 form-check d-flex justify-content-center">
+        
+          <a class="btn btn-outline-primary w-50 rounded-pill" style="text-decoration: none; "href="{%url 'login'%}">I have already account</a>
+          
+  
+          </div>      </form>
+</div>
+</div>
+</div>
+{%endblock%}

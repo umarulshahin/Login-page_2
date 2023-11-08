@@ -1,0 +1,45 @@
+{%extends 'home.html'%}
+
+{%block title%} 
+
+  login page
+
+{%endblock%}
+
+{%block content%}
+<div class="container ">
+    <div class="row  d-flex justify-content-center align-items-center " style="height: 100vh;">
+        <div class="col-md-5 shadow  bg-warning" style="padding: 100px;">
+
+
+    <form method="POST" action="">
+      {%csrf_token%}
+        <div class="mb-3  ">
+            <div class="text-center" ><h1>Login Page</h1></div>
+            
+          <label for="exampleInputEmail1" class="form-label"></label>
+          <input type="username" class="form-control rounded-pill" name="username"  placeholder="Username" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 text-center">
+          <label  for="exampleInputPassword1" class="form-label " ></label>
+          <input type="password" name="password" placeholder="Password" class="form-control rounded-pill" id="exampleInputPassword1">
+          <p class="mt-3" style="color: red;">{{error_message}}</p>
+        </div>
+        <div class="mt-3 form-check d-flex justify-content-center">
+        
+        <button type="submit" class="btn btn-primary w-50 rounded-pill">Login</button>
+        
+
+        </div>
+        <div class="mt-3 form-check d-flex justify-content-center">
+        
+          <a class="btn btn-outline-primary w-50 rounded-pill " href="{%url 'signup'%}">create new account</a>
+          
+  
+          </div>
+
+      </form>
+</div>
+</div>
+</div>
+{%endblock%}
